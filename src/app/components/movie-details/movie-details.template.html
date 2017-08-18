@@ -1,0 +1,29 @@
+
+<div class="container">
+    <div class="jumbotron col-sm-12">
+        <div *ngFor="let movie of movies">
+            <div class="col-sm-4 col-md-3 movie-img-box">
+                <img src="assets/img/movie-covers/{{movie.img}}">
+            </div>
+            <div class="col-sm-6 movie-details-box">
+                <div class="row">
+                    <h2>{{movie.name}}</h2>
+                </div>
+                <div class="row">
+                    {{movie.description}}
+                </div>
+                <div class="row">
+                    <h5 class="genre"><span class="glyphicon glyphicon-folder-open"></span><span *ngFor="let genre of movie.genres" class="label label-default"> {{genre}}</span></h5>
+                </div>
+                <div class="row">
+                    <span class="glyphicon glyphicon-time"></span> {{movie.length}}
+                </div>
+                <div class="row">
+
+                    <app-rating [ratings]="movie.rate"></app-rating><span>({{movie.rate}})</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

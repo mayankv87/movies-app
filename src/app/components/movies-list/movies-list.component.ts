@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from './movies-list.service';
-import { Movie } from '../movie';
+import { MoviesService } from '../../services/movies-list.service';
+import { Movie } from '../../movie';
 
 @Component({
     selector: 'app-movies-list',
@@ -10,8 +10,6 @@ import { Movie } from '../movie';
 })
 
 export class MoviesListComponent {
-
-    heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
     constructor(private moviesService: MoviesService) {
         this.moviesService = moviesService;
     }

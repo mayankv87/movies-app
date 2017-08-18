@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Movies App</h1>
+  <div class="row">
+    <div *ngFor="let movie of movies" class="col-md-3 col-sm-4 col-xs-6">
+      <a [routerLink]="['/movie-detail', movie.id]" class="purple">
+        <div class="dummy thumbnail">
+          <img src="assets/img/movie-covers/{{movie.img}}" name="movie-img" />
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
