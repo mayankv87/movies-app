@@ -5,14 +5,19 @@ import { MOVIES } from '../mock-movies';
 @Injectable()
 export class MoviesService {
     constructor() { }
-    movies: any;
+    movies: Movie[] = [];
 
-    getMovies(): Movie[] {
-        return MOVIES;
+    getMovies(): Promise<Movie[]> {
+        return Promise.resolve(MOVIES);
     }
 
     getMovieDetail(id: number) {
         this.movies = MOVIES.filter(movie => movie.id === id);
+        return this.movies;
+    }
+
+    searchMovies(searchStr: string) {
+        this.movies = MOVIES.filter(movie => movie.name === searchStr);
         return this.movies;
     }
 }

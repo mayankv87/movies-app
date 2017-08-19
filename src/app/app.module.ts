@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { RatingComponent } from './components/rating/rating.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesListComponent,
     MovieDetailsComponent,
-    RatingComponent
+    RatingComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
