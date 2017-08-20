@@ -35,7 +35,6 @@ declare var jQuery: any;
 export class MoviesListComponent implements OnInit {
     public state = 'inactive';
     movies: Movie[] = [];
-    movieObj: Movie[] = [];
     searchTerm: string;
     constructor(private moviesService: MoviesService) {
         this.moviesService = moviesService;
@@ -49,7 +48,6 @@ export class MoviesListComponent implements OnInit {
         this.moviesService.getMovies()
             .then(movies => {
                 this.movies = movies;
-                this.movieObj = movies;
             });
     }
 }

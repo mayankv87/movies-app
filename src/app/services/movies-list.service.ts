@@ -15,10 +15,5 @@ export class MoviesService {
         this.movies = MOVIES.filter(movie => movie.id === id);
         return this.movies;
     }
-
-    searchMovies(searchStr: string) {
-        this.movies = MOVIES.filter(movie => movie.name === searchStr);
-        return this.movies;
-    }
 }
 

@@ -4,7 +4,7 @@ import { genreType } from './movie.model';
 export const MOVIES: any = [
 	{
 		id: 1,
-		key: "deadpool",
+		key: "deadpoo",
 		name: "Deadpool",
 		description: "A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelerated healing powers, adopting the alter ego Deadpool.",
 		genres: [genreType.action, genreType.adventure, genreType.comedy],
