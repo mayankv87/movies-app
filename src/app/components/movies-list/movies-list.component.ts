@@ -44,6 +44,9 @@ export class MoviesListComponent implements OnInit {
         movie.state = (movie.state === 'active' ? 'inactive' : 'active');
     }
 
+    toggleFilter() {
+    }
+
     ngOnInit(): void {
         this.moviesService.getMovies()
             .then(movies => {
