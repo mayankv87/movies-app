@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../services/movies-list.service';
 import { Movie } from '../../movie';
-import {FilterPipe} from '../search/pipe';
+
 import {
     trigger,
     state,
@@ -23,25 +23,25 @@ declare var jQuery: any;
 
             })),
             state('active', style({
-                opacity: '0.8'
+                opacity: '0.7'
             })),
-            transition('inactive => active', animate('100ms ease-in')),
-            transition('active => inactive', animate('100ms ease-out'))
+            transition('inactive => active', animate('10ms ease-in')),
+            transition('active => inactive', animate('10ms ease-out'))
         ])
     ],
     providers: [MoviesService]
 })
 
 export class MoviesListComponent implements OnInit {
-    public state = 'inactive';
+
     movies: Movie[] = [];
     searchTerm: string;
     constructor(private moviesService: MoviesService) {
         this.moviesService = moviesService;
     }
 
-    toggleState() {
-        this.state = (this.state === 'active' ? 'inactive' : 'active');
+    toggleState(movie) {
+        movie.state = (movie.state === 'active' ? 'inactive' : 'active');
     }
 
     ngOnInit(): void {

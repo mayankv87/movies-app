@@ -4,7 +4,7 @@ export class Movie {
   name: string;
   description: string;
   genres: string[];
-  rate: number;
+  rate: string;
   length: string;
   img: string;
   constructor(values: Object = {}) {

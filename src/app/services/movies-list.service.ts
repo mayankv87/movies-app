@@ -5,15 +5,13 @@ import { MOVIES } from '../mock-movies';
 @Injectable()
 export class MoviesService {
     constructor() { }
-    movies: Movie[] = [];
 
     getMovies(): Promise<Movie[]> {
         return Promise.resolve(MOVIES);
     }
 
     getMovieDetail(id: number) {
-        this.movies = MOVIES.filter(movie => movie.id === id);
-        return this.movies;
+        return MOVIES.filter(movie => movie.id === id);
     }
 }
 
