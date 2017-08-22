@@ -1,11 +1,13 @@
-import { TestBed, async, fakeAsync, tick, inject, ComponentFixture } from '@angular/core/testing';
+import { TestBed, discardPeriodicTasks, async, fakeAsync, tick, inject, ComponentFixture } from '@angular/core/testing';
 import { MoviesListComponent } from './movies-list.component';
+import { BannerComponent } from './../banner/banner.component';
 import { MoviesService } from './../../services/movies-list.service';
 import { FormGroup, FormsModule } from '@angular/forms';
 import { DebugElement } from '@angular/core';
-import { FilterPipe } from '../search/pipe';
+import { FilterMovies } from '../search/search';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Movies List Component', () => {
   let fixture: ComponentFixture<MoviesListComponent>;
@@ -18,9 +20,9 @@ describe('Movies List Component', () => {
     TestBed.configureTestingModule({
       providers: [MoviesService],
       declarations: [
-        MoviesListComponent, FilterPipe
+        MoviesListComponent, FilterMovies, BannerComponent
       ],
-      imports: [FormsModule, RouterTestingModule]
+      imports: [FormsModule, RouterTestingModule, BrowserAnimationsModule]
     });
     fixture = TestBed.createComponent(MoviesListComponent);
     component = fixture.componentInstance;
@@ -38,6 +40,7 @@ describe('Movies List Component', () => {
       tick();
       fixture.detectChanges();
       expect(el.query(By.css('.thumbnail')).nativeElement).not.toBeNull();
+      discardPeriodicTasks();
     }));
   });
 });

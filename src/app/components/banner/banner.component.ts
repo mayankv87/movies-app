@@ -9,7 +9,7 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class BannerComponent implements OnInit, OnDestroy {
-    imgName: string;
+    imgName = 'deadpool.jpg';
     @Input() movies: any;
     timer;
     timerControl = new Subject<number>();

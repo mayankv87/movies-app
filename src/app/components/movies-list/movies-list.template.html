@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container movie-app">
   <div class="row">
     <app-banner [movies]="movies"></app-banner>
   </div>
   <div class="row">
     <div class="col-md-6 col-md-offset-3 search">
-      <input type="text" class="form-control" [(ngModel)]="searchByMovieName" placeholder="Search movies">
+      <input type="text" class="form-control input-lg" [(ngModel)]="searchByMovieName" placeholder="Search movies">
     </div>
     <div class="checkbox col-md-5 col-md-offset-5">
       <label><input type="checkbox" #searchByGenre>Filter by genres</label>

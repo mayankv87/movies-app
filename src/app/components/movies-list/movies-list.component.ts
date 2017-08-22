@@ -20,7 +20,7 @@ declare var jQuery: any;
     animations: [
         trigger('movieState', [
             state('inactive', style({
-
+                opacity: '1'
             })),
             state('active', style({
                 opacity: '0.7'
@@ -35,7 +35,6 @@ declare var jQuery: any;
 export class MoviesListComponent implements OnInit {
 
     movies: Movie[] = [];
-    filterType = 'searchByMovieName';
 
     constructor(private moviesService: MoviesService) {
         this.moviesService = moviesService;
