@@ -35,16 +35,14 @@ declare var jQuery: any;
 export class MoviesListComponent implements OnInit {
 
     movies: Movie[] = [];
-    searchTerm: string;
+    filterType = 'searchByMovieName';
+
     constructor(private moviesService: MoviesService) {
         this.moviesService = moviesService;
     }
 
     toggleState(movie) {
         movie.state = (movie.state === 'active' ? 'inactive' : 'active');
-    }
-
-    toggleFilter() {
     }
 
     ngOnInit(): void {
