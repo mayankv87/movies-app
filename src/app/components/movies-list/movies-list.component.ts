@@ -40,6 +40,11 @@ export class MoviesListComponent implements OnInit {
         this.moviesService = moviesService;
     }
 
+    /**
+     * This method is to toggle the animation state
+     * Active means opacity 0.7 and inactive means opacity 1
+     * @param movie
+     */
     toggleState(movie) {
         movie.state = (movie.state === 'active' ? 'inactive' : 'active');
     }

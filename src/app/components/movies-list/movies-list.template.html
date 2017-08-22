@@ -3,19 +3,19 @@
     <app-banner [movies]="movies"></app-banner>
   </div>
   <div class="row">
-    <div class="col-md-6 col-md-offset-3 search">
+    <div class="col-sm-6 col-sm-offset-3 search">
       <input type="text" class="form-control input-lg" [(ngModel)]="searchByMovieName" placeholder="Search movies">
     </div>
-    <div class="checkbox col-md-5 col-md-offset-5">
+    <div class="checkbox col-sm-5 col-sm-offset-5">
       <label><input type="checkbox" #searchByGenre>Filter by genres</label>
     </div>
   </div>
 
   <div class="row">
     <div *ngFor="let movie of movies | FilterMovies: searchByMovieName: searchByGenre.checked" class="col-md-3 col-sm-4 col-xs-6">
-      <a [routerLink]="['/movie-detail', movie.id]">
-        <div class="dummy thumbnail" [@movieState]="movie.state" (mouseenter)="toggleState(movie)" (mouseleave)="toggleState(movie)">
-          <img src="assets/img/movie-covers/{{movie.img}}" name="movie-img" />
+      <a [routerLink]="['/movie-detail', movie.id]" (click)="toggleState(movie)">
+        <div class="thumbnail" [@movieState]="movie.state" (mouseenter)="toggleState(movie)" (mouseleave)="toggleState(movie)">
+          <img src="assets/img/movie-covers/{{movie.img}}" alt="{{movie.name}}" name="movie-img" />
         </div>
       </a>
     </div>

@@ -16,6 +16,11 @@ export class MovieDetailsComponent implements OnInit {
         this.movieservice = movieservice;
     }
 
+    /**
+     * This lifecycle hook is to first get the id from route
+     * and then passing that ID to service to get movie details
+     * and then assigning it to movies array
+     */
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.id = Number(params['id']);
