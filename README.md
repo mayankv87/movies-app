@@ -7,8 +7,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. This Demo application is to search movies
 2. Movies can be filter by movie name or genre
 3. On click of movie thumbnail will take you to the movie details page
-4. This app has dynamic Banner component which change the image on every 3-4 sec built using observables
-5. The app is responsive using botstrap
+4. This app has dynamic Banner component which will change the image on every 3-4 sec built using observables
+5. The app is responsive using bootstrap
 6. Animation is used on thumbnail on mouserenter and mouseleave
 7. covered some unit test cases
 
