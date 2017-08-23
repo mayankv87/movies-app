@@ -12,6 +12,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 6. Animation is used on thumbnail on mouserenter and mouseleave
 7. covered some unit test cases
 
+## Follow the below instructions to run this app on local
+1. npm install -g @angular/cli (install angular cli globally)
+2. npm install (to install all the modules)
+3. npm start or ng serve (to start the app)
+4. URL : http://localhost:4200/
 
 ## Demo hosted on firebase
 URL : https://movies-app-66252.firebaseapp.com/
