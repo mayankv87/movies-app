@@ -34,7 +34,7 @@ declare var jQuery: any;
 
 export class MoviesListComponent implements OnInit {
 
-    movies: Movie[] = [];
+    movies: Movie[];
 
     constructor(private moviesService: MoviesService) {
         this.moviesService = moviesService;

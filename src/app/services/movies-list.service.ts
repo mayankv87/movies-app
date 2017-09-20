@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Movie } from '../movie';
 import { MOVIES } from '../mock-movies';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class MoviesService {
-    constructor() { }
+    constructor(private http: Http) { }
 
     /**
      * this method will return the promise resolved
      * response from mock data
      */
     getMovies(): Promise<Movie[]> {
-        return Promise.resolve(MOVIES);
+        return this.http.get('/api/movies')
+        .map((res) => res.json()).toPromise();
     }
 
     /**
